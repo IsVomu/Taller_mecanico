@@ -1,0 +1,14 @@
+{% extends 'base.html' %}
+{% block content %}
+<div class="card shadow col-md-6 mx-auto">
+    <div class="card-body">
+        <h3 class="card-title">Gestión de Repuesto</h3>
+        <form method="post" class="mt-3">
+            {% csrf_token %}
+            {{ form.as_p }}
+            <button type="submit" class="btn btn-success">Guardar Repuesto</button>
+            <a href="{% url 'repuesto_list' %}" class="btn btn-secondary">Cancelar</a>
+        </form>
+    </div>
+</div>
+{% endblock %}
